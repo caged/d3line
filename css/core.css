@@ -52,32 +52,33 @@ table {
 }
 
 body {
-  background: #f1f1f1;
+  background: #ccc url(/img/bg.png);
 }
 
 #chart {
-  width: 600px;
+  width: 580px;
   height: 300px;
-  margin: 40px auto;
-  background: #fafafa;
+  margin: 100px auto;
+  background: #101010;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  border: 1px solid #e1e1e1;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-box-shadow: 1px 0 2px rgba(0,0,0,1);
 }
 
 /*------------------------------------------------------------------------------------
   @group data
 ------------------------------------------------------------------------------------*/
 text {
-  font-size: 8px;
-  fill: #888;
+  font-size: 7px;
+  fill: #444;
   text-transform: uppercase;
+  letter-spacing: 0.2em;
 }
 
 .apath {
-  stroke: #00aff2;
+  stroke: #222;
   stroke-width: 2px;
   fill: none;
 }
@@ -105,18 +106,28 @@ g.dogs .point {
 
 g.even rect {
   shape-rendering: crispedges;
-  fill: #ccc;
+  fill: #101010;
   fill-opacity: 0.2;
   stroke-width: 1px;
-  stroke: #ddd;
+  stroke: #222;
 }
 
 g.odd rect {
   shape-rendering: crispedges;
-  fill: #fff;
-  fill-opacity: 0.2;
+  fill: #222;
+  fill-opacity: 0.4;
   stroke-width: 1px;
-  stroke: #ddd;
+  stroke: #222;
+}
+
+.tick line {
+  stroke: 1px;
+  stroke: #212121;
+  shape-rendering: crispedges;
+}
+
+.tick text {
+  fill: #666;
 }
 
 /* @end */
