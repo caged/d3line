@@ -52,20 +52,24 @@ table {
 }
 
 body {
-  background: #ccc url(/img/bg.png);
+  background: #ccc url(/img/bg2.png);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #chart {
-  width: 580px;
-  height: 300px;
-  margin: 100px auto;
-  background: #101010;
+  width: 560px;
+  height: 316px;
+  margin: 100px auto 10px auto;
+  background: rgba(10,10,10,0.9);
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  -webkit-box-shadow: 1px 0 2px rgba(0,0,0,1);
-}
+  -webkit-box-shadow: 1px 0 1px rgba(0,0,0,0.6);
+  -moz-box-shadow: 1px 0 1px rgba(0,0,0,0.6);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.6);
+/*  -webkit-box-shadow: 1px 0 2px rgba(0,0,0,1);
+*/}
 
 /*------------------------------------------------------------------------------------
   @group data
@@ -109,25 +113,75 @@ g.even rect {
   fill: #101010;
   fill-opacity: 0.2;
   stroke-width: 1px;
-  stroke: #222;
+  stroke: #1e1e1e;
 }
 
 g.odd rect {
   shape-rendering: crispedges;
-  fill: #222;
+  fill: #1c1c1c;
   fill-opacity: 0.4;
   stroke-width: 1px;
-  stroke: #222;
+  stroke: #1e1e1e;
 }
 
 .tick line {
   stroke: 1px;
-  stroke: #212121;
+  stroke: #1e1e1e;
   shape-rendering: crispedges;
 }
 
 .tick text {
   fill: #666;
+}
+
+/* @end */
+
+/*------------------------------------------------------------------------------------
+  @group legend
+------------------------------------------------------------------------------------*/
+
+#lazy {
+  width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#lazy li {
+  display: inline-block;
+}
+
+#lazy li a {
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(0,0,0,0.7);
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 6px;
+  border-radius: 16px;
+  font-size: 12px;
+  display: inline-block;
+  padding: 6px 20px 6px 10px;
+  border: 2px solid #fff;
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.6);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.6);
+}
+
+#lazy span {
+  background: #fff;
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  border-radius: 24px;
+  display: inline-block;
+  padding: 4px;
+  margin-right: 5px;
+}
+
+#lazy li.cats span {
+  background-color: #67bede;
+}
+
+#lazy li.dogs span {
+  background-color: #af1318;
 }
 
 /* @end */

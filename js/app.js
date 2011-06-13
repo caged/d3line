@@ -3,7 +3,7 @@
     var bars, data, days, h, lines, max, pb, pl, pr, pt, ticks, tl, vis, w, x, xl, y, _ref;
     days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     data = [[10, 5, 10, 5, 8, 15, 18], [20, 10, 20, 40, 23, 20, 12]];
-    _ref = [20, 35, 20, 25], pt = _ref[0], pl = _ref[1], pr = _ref[2], pb = _ref[3];
+    _ref = [20, 40, 20, 30], pt = _ref[0], pl = _ref[1], pr = _ref[2], pb = _ref[3];
     w = $('#chart').width() - (pl + pr);
     h = $('#chart').height() - (pt + pb);
     tl = 3;
@@ -27,7 +27,7 @@
     }).attr('y', h).attr("dy", "1.5em").attr('dx', function(d) {
       return (xl.rangeBand() / 2.0) - (this.textLength.baseVal.value / 2.0);
     });
-    ticks = vis.selectAll('.tick').data(y.ticks(10)).enter().append('svg:g').attr('transform', function(d) {
+    ticks = vis.selectAll('.tick').data(y.ticks(7)).enter().append('svg:g').attr('transform', function(d) {
       return "translate(-" + (tl * 1.5) + ", " + (y(d)) + ")";
     }).attr('class', 'tick');
     ticks.append('svg:line').attr('y1', 0).attr('y2', 0).attr('x1', 0).attr('x2', w + tl);
@@ -48,12 +48,12 @@
     }).y(function(d) {
       return y(d);
     }).interpolate('cardinal').tension(.7));
-    return lines.selectAll('.apath').data(function(d) {
+    return lines.selectAll('.point').data(function(d) {
       return d;
     }).enter().append("svg:circle").attr("class", "point").attr("cx", function(d, i) {
       return x(i);
     }).attr("cy", function(d) {
       return y(d);
-    }).attr("r", 4);
+    }).attr("r", 3);
   });
 }).call(this);

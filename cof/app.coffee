@@ -2,7 +2,7 @@ $ ->
   days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
   data = [[10, 5, 10, 5, 8, 15, 18], [20, 10, 20, 40, 23, 20, 12]]
   
-  [pt, pl, pr, pb] = [20, 35, 20, 25]  # padding
+  [pt, pl, pr, pb] = [20, 40, 20, 30]  # padding
   w = $('#chart').width()  - (pl + pr) # width
   h = $('#chart').height() - (pt + pb) # height
   tl = 3 # tick length
@@ -44,7 +44,7 @@ $ ->
   
   # Add tick groups
   ticks = vis.selectAll('.tick')
-    .data(y.ticks(10))
+    .data(y.ticks(7))
   .enter().append('svg:g')
     .attr('transform', (d) -> "translate(-#{tl * 1.5}, #{y(d)})")
     .attr('class', 'tick')
@@ -79,10 +79,11 @@ $ ->
       .tension(.7)
   
   # add point circles to their respective group
-  lines.selectAll('.apath')
+  lines.selectAll('.point')
     .data((d) -> d)
   .enter().append("svg:circle")
     .attr("class", "point")
     .attr("cx", (d, i) -> x(i))
     .attr("cy", (d) -> y(d))
-    .attr("r", 4)
+    .attr("r", 3)
+  
